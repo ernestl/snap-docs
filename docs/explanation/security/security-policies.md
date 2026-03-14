@@ -187,9 +187,9 @@ Before _refresh awareness_ became available, if a refresh occurred while a snap 
 (ref-security-policies_refresh-awareness)=
 ### Refresh awareness
 
-By default, a service running from a snap needs to be restarted whenever the snap is refreshed (see {ref}`Services and daemons <explanation-security-security-policies>`) for more details).
+By default, a service running from a snap needs to be restarted whenever the snap is refreshed (see {ref}`Services and daemons <explanation-security-security-policies>` for more details).
 
-Stopping and starting a service is a requirement to support {ref}`snap revert <explanation-security-security-policies>`) and its copying of a snap’s system data from the current version to the new version.
+Stopping and starting a service is a requirement to support {ref}`snap revert <explanation-security-security-policies>` and its copying of a snap’s system data from the current version to the new version.
 
 System data typically includes databases, data files, and configuration files (see {ref}`Data locations <interfaces-data-locations>`), although all of this is up to the snap developer.
 
@@ -209,7 +209,7 @@ Snapd includes the following built-in features that interacts with user informat
 * {ref}`Snapshots <how-to-guides-manage-snaps-create-data-snapshots>` of snap {ref}`user data <interfaces-data-locations>`
 * The {ref}`home <interfaces-home-interface>` interface allows access to non-hidden files in the user’s home
 * The {ref}`personal-files <interfaces-personal-files-interface>` interface allows access to specified files in the user's home
-* {ref}`Persisted data on Ubuntu Core devices <interfaces-data-locations>`
+* {ref}`Persisted data on Ubuntu Core devices <interfaces-data-locations_ubuntu-core-persisted-data>`
 
 Snapd is designed to make these interactions secure by default. Developers are expected to implement their own data storage solutions, e.g. database and configuration files, on top of snapd’s secure mechanisms. This means developers share responsibility for ensuring the availability, integrity, confidentiality, and compatibility of user data over the lifetime of a snap or snap-based product.
 
