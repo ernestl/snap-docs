@@ -80,11 +80,19 @@ Locally, these are handled by the snap daemon, *snapd*, while remote connections
 * **Hashing of snaps**</br>
 [SHA3-384]
 * **HTTPS communication**</br>
-Snapd uses the [Go standard library TLS package] for the client, configured to use at least TLS >= 1.2.
+Snapd uses the [Go standard library TLS package] for the client, configured to use TLS 1.2 or later.
 * **Device session request signing**</br>
 Same as digital signatures for assertions: [SHA3-384], [SHA512] and [OpenGPG signature packet]. [RSA] 4096 device key.
 * **Macaroons for authorisation and authentication**</br>
 Snapd uses them via [Go macaroon V1], which means [SHA256] [HMAC]s and [NaCL secretbox].
+
+In the standard snapd, cryptographic functionality is provided by Go’s native cryptographic implementations from the Go standard library. These implementations may make use of architecture-specific optimizations (CPU instruction set extensions such as AES-NI or SHA) where available.
+
+Snapd is also being developed in a FIPS variant - not yet generally available - in which cryptographic operations are provided by OpenSSL rather than Go’s native implementations. In this variant, OpenSSL may either be bundled with snapd or supplied by the host system, enabling integration with cryptographic modules validated under FIPS in environments that require FIPS compliance. For more information about FIPS see: [Information about FIPS on Ubuntu 22.04].
+
+In both variants, cryptographically secure randomness is sourced from the operating system via the Linux kernel’s randomness interfaces (for example getrandom(2)), which provide entropy to user-space cryptographic libraries.
+
+[Information about FIPS on Ubuntu 22.04]: https://ubuntu.com/security/certifications/docs/2204/fips#p-99917-updates-and-preview
 
 ### Snap Store cryptography
 
