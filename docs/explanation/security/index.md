@@ -7,6 +7,7 @@ Learn about how snaps use standard Linux security policies to isolate themselves
 * {ref}`Assertions <explanation-security-assertions>`: Digitally signed documents used to verify all snap artefacts.
 * {ref}`Snap confinement <explanation-security-snap-confinement>`: Learn more about snap's various degrees of isolation.
 * {ref}`Classic confinement <explanation-security-classic-confinement>`: Learn more about classic confinement.
+* {ref}`Authentication and authorization <explanation-security-authentication-and-authorization>`: How snapd authenticates callers and authorizes operations.
 * {ref}`Snapd release process <explanation-security-snapd-release-process>`: How and when we update the snapd package.
 
 
@@ -20,4 +21,5 @@ Security policies <security-policies>
 Assertions <assertions>
 Snap confinement <snap-confinement>
 Classic confinement <classic-confinement>
+Authentication and authorization <authentication-and-authorization>
 Release process <snapd-release-process>

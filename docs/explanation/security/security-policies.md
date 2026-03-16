@@ -199,7 +199,7 @@ To help mitigate any potential issues when a restart is required, _snapd_ will c
 
 * if **no processes are running**, the refresh is performed.
 * if **systemd-initiated processes** are detected, their associated units are first stopped, the snap refreshed, and those units started again.
-* if other **snap-initiated processes** are detected, {ref}`refresh awareness <explanation-how-snaps-work-refresh-awareness>` is used to mediate the update.
+security-policies.md* if other **snap-initiated processes** are detected, {ref}`refresh awareness <explanation-how-snaps-work-refresh-awareness>` is used to mediate the update.
 
 ##  Information security
 Snapd includes the following built-in features that interacts with user information:
